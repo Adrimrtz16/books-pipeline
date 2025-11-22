@@ -73,63 +73,92 @@ books_data = []
 count = 0
 for query in books_isbn_title:
     book_api_google = search_book(query)
-    for book in book_api_google:
-        gb_id = book.get("id")
-        id = book.get("id_scrapper")
-
-        volume_info = book.get('volumeInfo', {})
-        title = volume_info.get('title', None)
-        subtitle = volume_info.get('subtitle', None)
-        publisher = volume_info.get('publisher', None)
-        published_date = volume_info.get('publishedDate', None)
-        language = volume_info.get("language", None)
-
-        sale_info = book.get('saleInfo', [])
-        retail_price = sale_info.get('retailPrice', {})
-        list_price = sale_info.get('listPrice', {})
-        retail_price = f"{retail_price.get('amount')} {retail_price.get('currencyCode')}"
-        list_price = f"{list_price.get('amount')} {list_price.get('currencyCode')}"
-        if str(retail_price) == "None None":
-            retail_price = None
-        if str(list_price) == "None None":
-            list_price = None
-
-        isbn_list = volume_info.get('industryIdentifiers', [])
-        isbn_10 = next((isbn['identifier'] for isbn in isbn_list if isbn['type'] == 'ISBN_10'), None)
-        isbn_13 = next((isbn['identifier'] for isbn in isbn_list if isbn['type'] == 'ISBN_13'), None)
-
-        googe_books_url = book.get('selfLink')
-
-        book_details = {
-            "id": id,
-            "gb_id": gb_id,
-            "language": language,
-            "title": title,
-            "subtitle": subtitle,
-            "publisher": publisher,
-            "published_date": published_date,
-            "retail_price": retail_price,
-            "list_price": list_price,
-            "isbn_10": isbn_10,
-            "isbn_13": isbn_13,
-            "book_url": googe_books_url
+    # Si la búsqueda no devuelve resultados, generar un registro artificial
+    if not book_api_google:
+        artificial = {
+            "id": query.get("id"),
+            "gb_id": None,
+            "language": None,
+            "title": None,
+            "subtitle": None,
+            "publisher": None,
+            "published_date": None,
+            "price_amount": None,
+            "price_currency": None,
+            "ISBN_10": None,
+            "ISBN_13": None,
+            "book_url": None
         }
-
-        books_data.append(book_details)
+        books_data.append(artificial)
         count += 1
-        print("-" * 20 + " Cargado libro: " + str(count) + " " + "-" * 20)
+        print("-" * 20 + " Generado registro artificial para id: " + str(query.get("id")) + " " + "-" * 20)
+    else:
+        for book in book_api_google:
+            gb_id = book.get("id")
+            id = book.get("id_scrapper")
+
+            volume_info = book.get('volumeInfo', {})
+            title = volume_info.get('title', None)
+            subtitle = volume_info.get('subtitle', None)
+            publisher = volume_info.get('publisher', None)
+            published_date = volume_info.get('publishedDate', None)
+            language = volume_info.get("language", None)
+
+            sale_info = book.get('saleInfo', {})
+            retail_price = sale_info.get('retailPrice', {})
+            price_amount = retail_price.get('amount', None)
+            price_currency = retail_price.get('currencyCode', None)
+
+            isbn_list = volume_info.get('industryIdentifiers', [])
+            isbn_10 = next((isbn['identifier'] for isbn in isbn_list if isbn['type'] == 'ISBN_10'), None)
+            isbn_13 = next((isbn['identifier'] for isbn in isbn_list if isbn['type'] == 'ISBN_13'), None)
+
+            googe_books_url = book.get('selfLink')
+
+            book_details = {
+                "id": id,
+                "gb_id": gb_id,
+                "language": language,
+                "title": title,
+                "subtitle": subtitle,
+                "publisher": publisher,
+                "published_date": published_date,
+                "price_amount": price_amount,
+                "price_currency": price_currency,
+                "ISBN_10": isbn_10,
+                "ISBN_13": isbn_13,
+                "book_url": googe_books_url
+            }
+
+            books_data.append(book_details)
+            count += 1
+            print("-" * 20 + " Cargado libro: " + str(count) + " " + "-" * 20)
 
 # =============================================================
-#                 BUSCAR EN GOOGLE BOOKS API
+#                        PASAR A CSV
 # =============================================================
 CSV_PATH = pathlib.Path("..") / "landing" / "googlebooks_books.csv"
 
 with open(CSV_PATH, mode="w", encoding="utf-8", newline="") as csvfile:
-    fieldnames = books_data[0].keys() 
+    fieldnames = [
+        "id",
+        "gb_id",
+        "language",
+        "title",
+        "subtitle",
+        "publisher",
+        "published_date",
+        "price_amount",
+        "price_currency",
+        "ISBN_10",
+        "ISBN_13",
+        "book_url",
+    ]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    writer.writeheader()  
-    writer.writerows(books_data)  
+    writer.writeheader()
+    if books_data:
+        writer.writerows(books_data)
 
 
 

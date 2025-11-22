@@ -1,0 +1,13 @@
+{
+  "generated_at": "2025-11-22T21:12:49.419272+00:00",
+  "rows_input": 15,
+  "rows_output": 15,
+  "matched_with_google": 12,
+  "percent_merge_true": 80.0,
+  "percent_merge_false": 20.0,
+  "duplicates_removed": 0,
+  "source_preference_counts": {
+    "google": 12,
+    "goodreads_only": 3
+  }
+}

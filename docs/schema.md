@@ -1,53 +1,3 @@
-# Books Pipeline
-
-## Enlace repositorio GitHub
-https://github.com/Adrimrtz16/books-pipeline
-
----
-
-## Instalación 
-
-```bash
-pip install -r requirements.txt
-```
-
-## Ejecución
-
-### 1️ Scraper de Goodreads
-
-```bash
-python scrape_goodreads.py
-```
-
-Este script realiza scraping en Goodreads para obtener información de libros (título, autores, ISBN_13, puntuación y URL). Guarda el resultado en `landing/goodreads_books.json`.
-
-### 2️ Fetcher y enriquecedor de Google Books
-
-```bash
-python enrich_googlebooks.py
-```
-
-Consulta la API de Google Books para enriquecer cada registro extraído de Goodreads (busca ISBN o título, recupera `gb_id`, ISBNs, precios, URL, etc.). Requiere la variable de entorno `GOOGLE_BOOKS_API_KEY` y produce `landing/googlebooks_books.csv`.
-
-### 3️ Merge e integración final
-
-```bash
-python integrate_pipeline.py
-```
-
-Combina y normaliza los datos de `landing/goodreads_books.json` y `landing/googlebooks_books.csv`, priorizando campos de Google cuando están disponibles. Escribe la tabla canónica en `standard/dim_book.parquet`, el detalle de fuente en `standard/book_source_detail.parquet` y las métricas de calidad en `docs/quality_metrics.json`.
-
-## Outputs
-
-- La tabla canónica normalizada se encuentra en `standard/dim_book.parquet`.
-- Las quality metrics se encuentran en `docs/quality_metrics.json`.
-- La definición del esquema está en `docs/schema.md`.
-- La tabla de detalle de fuentes originales está en `standard/book_source_detail.parquet`.
-- Las fuentes de datos en bruto están en `landing/`.
-
-
-# Schema.md
-
 | Campo                 | Tipo    | Nullable | Formato       | Ejemplo                                                                                                              | Reglas                                                                                               |
 | --------------------- | ------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | canonical_id          | int64   | No       | numérico      | 5                                                                                                                    | Identificador único incremental<br>Debe ser entero positivo                                          |
@@ -65,6 +15,3 @@ Combina y normaliza los datos de `landing/goodreads_books.json` y `landing/googl
 | price_currency        | object  | Sí       | string        | EUR                                                                                                                  | Moneda válida ISO-4217                                                                               |
 | book_url_goodreads    | object  | No       | URL           | [https://www.goodreads.com/book/show/17912916](https://www.goodreads.com/book/show/17912916)                         | Debe ser una URL válida                                                                              |
 | book_url_google_books | object  | Sí       | URL           | [https://www.googleapis.com/books/v1/volumes/tXdBAQAAQBAJ](https://www.googleapis.com/books/v1/volumes/tXdBAQAAQBAJ) | Debe ser una URL válida si existe                                                                    |
-
-
-
