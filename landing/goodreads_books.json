@@ -1,57 +1,63 @@
 [
   {
-    "title": "Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking",
+    "id": 1,
+    "title": "Data Science for Business",
     "author": [
       "Foster Provost",
       "Tom Fawcett"
     ],
     "rating": "4.13",
-    "ratings_count": 2623,
+    "ratings_count": 2624,
     "book_url": "https://www.goodreads.com/book/show/17912916",
-    "ISBN": "9781449361327"
+    "ISBN_13": "9781449361327"
   },
   {
-    "title": "Data Smart: Using Data Science to Transform Information into Insight",
+    "id": 2,
+    "title": "Data Smart",
     "author": [
       "John W. Foreman"
     ],
     "rating": "4.12",
     "ratings_count": 1015,
     "book_url": "https://www.goodreads.com/book/show/17682206",
-    "ISBN": "9781118661468"
+    "ISBN_13": "9781118661468"
   },
   {
-    "title": "Data Science from Scratch: First Principles with Python",
+    "id": 3,
+    "title": "Data Science from Scratch",
     "author": [
       "Joel Grus"
     ],
     "rating": "3.91",
-    "ratings_count": 1135,
+    "ratings_count": 1136,
     "book_url": "https://www.goodreads.com/book/show/25407018",
-    "ISBN": null
+    "ISBN_13": null
   },
   {
-    "title": "Mindmasters: The Data-Driven Science of Predicting and Changing Human Behavior",
+    "id": 4,
+    "title": "Mindmasters",
     "author": [
       "Sandra Matz"
     ],
-    "rating": "4.04",
-    "ratings_count": 289,
+    "rating": "4.03",
+    "ratings_count": 291,
     "book_url": "https://www.goodreads.com/book/show/205905685",
-    "ISBN": "9781647826314"
+    "ISBN_13": "9781647826314"
   },
   {
-    "title": "R for Data Science: Import, Tidy, Transform, Visualize, and Model Data",
+    "id": 5,
+    "title": "R for Data Science",
     "author": [
       "Hadley Wickham"
     ],
     "rating": "4.54",
     "ratings_count": 1209,
     "book_url": "https://www.goodreads.com/book/show/33399049",
-    "ISBN": "9781491910351"
+    "ISBN_13": "9781491910351"
   },
   {
-    "title": "Doing Data Science: Straight Talk from the Frontline",
+    "id": 6,
+    "title": "Doing Data Science",
     "author": [
       "Cathy O'Neil",
       "Rachel Schutt"
@@ -59,20 +65,11 @@
     "rating": "3.74",
     "ratings_count": 570,
     "book_url": "https://www.goodreads.com/book/show/17346997",
-    "ISBN": "9781449358655"
+    "ISBN_13": "9781449358655"
   },
   {
-    "title": "Python Data Science Handbook: Essential Tools for Working with Data",
-    "author": [
-      "Jake VanderPlas"
-    ],
-    "rating": "4.30",
-    "ratings_count": 661,
-    "book_url": "https://www.goodreads.com/book/show/26457146",
-    "ISBN": "9781491912058"
-  },
-  {
-    "title": "Numsense! Data Science for the Layman: No Math Added",
+    "id": 7,
+    "title": "Numsense! Data Science for the Layman",
     "author": [
       "Annalyn Ng",
       "Kenneth Soo"
@@ -80,9 +77,21 @@
     "rating": "4.14",
     "ratings_count": 616,
     "book_url": "https://www.goodreads.com/book/show/34213247",
-    "ISBN": "9789811127007"
+    "ISBN_13": "9789811127007"
   },
   {
+    "id": 8,
+    "title": "Python Data Science Handbook",
+    "author": [
+      "Jake VanderPlas"
+    ],
+    "rating": "4.30",
+    "ratings_count": 662,
+    "book_url": "https://www.goodreads.com/book/show/26457146",
+    "ISBN_13": "9781491912058"
+  },
+  {
+    "id": 9,
     "title": "Data Science",
     "author": [
       "John D. Kelleher",
@@ -91,10 +100,11 @@
     "rating": "3.90",
     "ratings_count": 853,
     "book_url": "https://www.goodreads.com/book/show/36722689",
-    "ISBN": "9780262535434"
+    "ISBN_13": "9780262535434"
   },
   {
-    "title": "Becoming a Data Head: How to Think, Speak, and Understand Data Science, Statistics, and Machine Learning",
+    "id": 10,
+    "title": "Becoming a Data Head",
     "author": [
       "Alex J. Gutman",
       "Jordan Goldmeier"
@@ -102,9 +112,10 @@
     "rating": "4.21",
     "ratings_count": 424,
     "book_url": "https://www.goodreads.com/book/show/56357967",
-    "ISBN": "9781119741763"
+    "ISBN_13": "9781119741763"
   },
   {
+    "id": 11,
     "title": "Data Science For Dummies (For Dummies",
     "author": [
       "Lillian Pierson"
@@ -112,10 +123,11 @@
     "rating": "3.40",
     "ratings_count": 263,
     "book_url": "https://www.goodreads.com/book/show/56751800",
-    "ISBN": "9781119811558"
+    "ISBN_13": "9781119811558"
   },
   {
-    "title": "Ace the Data Science Interview: 201 Real Interview Questions Asked By FAANG, Tech Startups, & Wall Street",
+    "id": 12,
+    "title": "Ace the Data Science Interview",
     "author": [
       "Kevin Huo",
       "Nick Singh"
@@ -123,10 +135,11 @@
     "rating": "4.32",
     "ratings_count": 193,
     "book_url": "https://www.goodreads.com/book/show/58949285",
-    "ISBN": "9780578973838"
+    "ISBN_13": "9780578973838"
   },
   {
-    "title": "The Art of Data Science: A Guide for Anyone Who Works with Data",
+    "id": 13,
+    "title": "The Art of Data Science",
     "author": [
       "Roger D. Peng",
       "Elizabeth Matsui"
@@ -134,9 +147,10 @@
     "rating": "3.71",
     "ratings_count": 297,
     "book_url": "https://www.goodreads.com/book/show/26299386",
-    "ISBN": null
+    "ISBN_13": null
   },
   {
+    "id": 14,
     "title": "What Is Data Science?",
     "author": [
       "Mike Loukides"
@@ -144,16 +158,17 @@
     "rating": "3.68",
     "ratings_count": 590,
     "book_url": "https://www.goodreads.com/book/show/13638556",
-    "ISBN": null
+    "ISBN_13": null
   },
   {
-    "title": "Minding the Machines: Building and Leading Data Science and Analytics Teams",
+    "id": 15,
+    "title": "Minding the Machines",
     "author": [
       "Jeremy  Adamson"
     ],
     "rating": "4.32",
     "ratings_count": 41,
     "book_url": "https://www.goodreads.com/book/show/57182112",
-    "ISBN": "9781119785323"
+    "ISBN_13": "9781119785323"
   }
 ]

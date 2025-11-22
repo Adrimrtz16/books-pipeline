@@ -48,7 +48,7 @@ def get_books(ids, session):
 
         soup = BeautifulSoup(response.text, "lxml")  
 
-        title = soup.select_one("h1.Text__title1").text.strip()
+        title = soup.select_one("h1.Text__title1").text.split(':')[0].strip()
 
         authorsRaw = soup.select("span.ContributorLink__name")
         authors = []
@@ -62,18 +62,19 @@ def get_books(ids, session):
         rating_count = int(rating_count_cleaned.split(" ")[0].replace(",", "")) 
 
         script_tag = soup.select_one('script[type="application/ld+json"]')
-        isbn = json.loads(script_tag.string).get("isbn", None)
-
+        isbn13 = json.loads(script_tag.string).get("isbn", None)
         book = {
+            "id":len(books) + 1,
             "title": title,
             "author": authors,
             "rating": rating,
             "ratings_count": rating_count,
             "book_url": URL_SHOW_BOOK,
-            "ISBN": isbn
+            "ISBN_13": isbn13
         }
 
         books.append(book)
+        print("Scrapeando: " + str(len(books)) + "/" + str(NUMERO_LIBROS))
 
     return books
 

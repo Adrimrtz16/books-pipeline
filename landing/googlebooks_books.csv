@@ -1,0 +1,13 @@
+id,gb_id,language,title,subtitle,publisher,published_date,retail_price,list_price,isbn_10,isbn_13,book_url
+1,_1b4nAEACAAJ,en,Data Science for Business,,Oreilly & Associates Incorporated,2013,,,1449361323,9781449361327,https://www.googleapis.com/books/v1/volumes/_1b4nAEACAAJ
+2,tXdBAQAAQBAJ,en,Data Smart,Using Data Science to Transform Information into Insight,John Wiley & Sons,2013-11-12,,,111866146X,9781118661468,https://www.googleapis.com/books/v1/volumes/tXdBAQAAQBAJ
+3,YBKSDwAAQBAJ,en,Data Science from Scratch,First Principles with Python,O'Reilly Media,2019-04-12,,,1492041106,9781492041108,https://www.googleapis.com/books/v1/volumes/YBKSDwAAQBAJ
+4,tYp50AEACAAJ,en,Mindmasters,The Data-Driven Science of Predicting and Changing Human Behavior,,2025-01-07,,,1647826314,9781647826314,https://www.googleapis.com/books/v1/volumes/tYp50AEACAAJ
+6,vaBDzwEACAAJ,en,Doing Data Science,Straight Talk from the Frontline,,,,,1449358659,9781449358655,https://www.googleapis.com/books/v1/volumes/vaBDzwEACAAJ
+8,yijjwAEACAAJ,en,Python Data Science Handbook,Essential Tools for Working with Data,O'Reilly Media,2016,,,1491912057,9781491912058,https://www.googleapis.com/books/v1/volumes/yijjwAEACAAJ
+9,TFpVDwAAQBAJ,en,Data Science,,MIT Press,2018-04-13,,,0262535432,9780262535434,https://www.googleapis.com/books/v1/volumes/TFpVDwAAQBAJ
+10,GCUqEAAAQBAJ,en,Becoming a Data Head,"How to Think, Speak, and Understand Data Science, Statistics, and Machine Learning",John Wiley & Sons,2021-04-13,27.99 EUR,27.99 EUR,1119741769,9781119741763,https://www.googleapis.com/books/v1/volumes/GCUqEAAAQBAJ
+11,ayc9EAAAQBAJ,en,Data Science For Dummies,,John Wiley & Sons,2021-09-15,,,1119811554,9781119811558,https://www.googleapis.com/books/v1/volumes/ayc9EAAAQBAJ
+12,82iszgEACAAJ,en,Ace the Data Science Interview,"201 Real Interview Questions Asked by FAANG, Tech Startups, & Wall Street",,2021,,,0578973839,9780578973838,https://www.googleapis.com/books/v1/volumes/82iszgEACAAJ
+13,ZDH9DAEACAAJ,en,The Art of Data Science,,,2016-06-08,,,1365061469,9781365061462,https://www.googleapis.com/books/v1/volumes/ZDH9DAEACAAJ
+15,74c9zgEACAAJ,en,Minding the Machines,Building and Leading Data Science and Analytics Teams,Wiley,2021-07-27,,,1119785324,9781119785323,https://www.googleapis.com/books/v1/volumes/74c9zgEACAAJ
